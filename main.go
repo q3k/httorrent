@@ -87,9 +87,6 @@ func main() {
 		glog.Infof("Getting info for %q...", magnet)
 		<-t.GotInfo()
 
-		i := t.Info()
-		files := i.UpvertedFiles()
-
 		wantFile := ""
 		if len(parts) > 0 {
 			wantFile = strings.Join(parts[1:], "/")

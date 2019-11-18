@@ -6,8 +6,8 @@ A stupid torrent/http proxy.
 Usage
 -----
 
-    go get github.com/q3k/httorrent
-    ./httorrent
+    go get -u github.com/q3k/httorrent
+    httorrent # (it's in your GOPATH, eg ~/go/bin)
 
 Then, in a browser, go to
 

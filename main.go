@@ -103,10 +103,11 @@ func main() {
 			if len(availFiles) > 1 {
 				w.Header().Add("Content", "text/html")
 				w.WriteHeader(200)
+				fmt.Fprintf(w, "<html><head><title>magnet %s directory</title></head><body>", magnet)
 				fmt.Fprintf(w, "available files:")
 				fmt.Fprintf(w, "<ul>")
 				for af, _ := range availFiles {
-					fmt.Fprintf(w, "<a href=\"/t/%s/%s\">%s</a>", url.QueryEscape(magnet), quotePath(af), af)
+					fmt.Fprintf(w, "<li><a href=\"/t/%s/%s\">%s</a></li>", url.QueryEscape(magnet), quotePath(af), af)
 				}
 				fmt.Fprintf(w, "</ul>")
 				return
